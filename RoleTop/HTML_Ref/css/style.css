@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Calibri', 'Open Sans', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Janda Manatee Solid', 'Londrina Solid', cursive;
+}
+
+#teste {
+    display: none;
+}
+
+h1 {
+    display: none;
+}
+
+h2 {
+    font-size: 1.3em;
+    padding: 0 0 20px 0;
+    color: black;
+    text-shadow: 
+    -1px -1px 0 #ffc600,
+    1px -1px 0 #ffc600,
+   -1px  1px 0 #ffc600,
+    1px  1px 0 #ffc600;
+}
+
+h2 > img {
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: middle;
+}
+
+footer > div >img {
+    height: 2.5em;
+    width: 2.5em;
+    vertical-align: middle;
+}
+
+#logo-area h2 {
+    padding: 0.5em 0 0 0;
+}
+
+#logo-area > img {
+    padding: 5em 0 0 0;
+    width: 23%;
+}
+
+section {
+    text-align: center;
+}
+
+section h2 {
+    padding: 20px 0;
+}
+
+section > a {
+    display: block;
+    padding: 20px 0;
+    text-decoration: none;
+}
+
+.section-container {
+    margin: 0 auto;
+    max-width: 1360px;
+}
+
+.section-container > a {
+    display: block;
+    padding: 20px 0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*********************************************
+                    NAV
+**********************************************/
+nav {
+    background-color: #ffc600;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+nav #bt-mobile-menu {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3em;
+    list-style-type: none;
+}
+
+nav ul > li {
+    width: 100%;
+    text-align: center;
+}
+
+nav ul > li > a {
+    padding: 0.4em;
+    display: block;
+    text-decoration: none;
+    color: #7d0093;
+    font-weight: bold;
+}
+
+nav ul > li > a:hover {
+    background-color: #7d0093;
+    color: #fff;
+}
+
+nav ul > li:last-child {
+    font-family: 'Janda Manatee Solid', 'Londrina Solid', cursive;
+}
+
+a.active {
+    color: #7d0093;
+}
+
+/*********************************************
+                    NAV
+**********************************************/
+
+#logo-area {
+    background-image: url(../img/logo_area.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 1em;
+}
+
+#logo-area h2 {
+    color: black;
+    text-shadow: -2px -2px 0 white,
+                  2px -2px 0 white,
+                 -2px  2px 0 white,
+                  2px  2px 0 white;
+}
+
+#quemsomos {
+    background-color: #7d0093;
+    text-align: center;
+    color: #ffc600;
+    vertical-align: top;
+}
+
+#QuemSomos p {
+    font-size: 1.2em;
+}
+
+#quemsomos h2 {
+    color: white;
+    text-shadow: 
+    -2px -2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    2px 2px 0 black;
+    margin: 0 2em 0 0;
+}
+
+#quemsomos a {
+    color: #ffc600;
+}
+
+#espaço {
+    background-color: black;
+    text-align: center;
+    color: #ffc600;
+    vertical-align: top;
+}
+
+#espaço h2 {
+    color: white;
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+}
+
+#espaço a {
+    color: #ffc600;
+}
+
+#eventos {
+    background-color: #7d0093;
+    text-align: center;
+    color: #ffc600;
+    vertical-align: top;
+}
+
+#eventos h2 {
+    color: white;
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+
+}
+
+#eventos a {
+    color: #ffc600;
+}
+
+#galeria {
+    background-color: black;
+    text-align: center;
+    color: #ffc600;
+    vertical-align: top;
+}
+
+#galeria h2 {
+    color: white;
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+
+}
+
+#depoimentos {
+    background-color: #7d0093;
+    text-align: center;
+    color: #ffc600;
+    vertical-align: top;
+}
+
+#depoimentos h2 {
+    color: white;
+    text-shadow: 
+    -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+
+}
+
+.flex-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-group.food-section {
+    justify-content: space-evenly;
+    align-items: center;
+    color: #ffc600;
+    font-family: 'Janda Manatee Solid', 'Londrina Solid', cursive;
+    
+}
+
+.food-section > div {
+    margin: 0.5em;
+    max-width: 23%;
+}
+ 
+ .flex-group > div > p {
+    height: 1.5em;
+ }
+ 
+ .flex-group > div > p:nth-child(odd) {
+    font-weight: bold;
+    line-height: 0.5em;
+    font-size: 2em;
+ }
+ 
+ .flex-group > div > p:nth-child(even) {
+    font-weight: bold;
+    font-size: 3.5em;
+    margin-top: -0.5em;
+    text-shadow: -3px -3px 0 #ffc600,
+                  3px -3px 0 #ffc600,
+                 -3px  3px 0 #ffc600,
+                  3px  3px 0 #ffc600;
+ }
+
+ .food-container > img {
+    width: 100%;
+ }
+
+#local {
+    background-color: #ccc;
+}
+
+footer {
+    background-color: #ffc600;
+    font-weight: bold;
+    text-align: center;
+    color: #7d0093;
+    width: 100%;
+}
+
+.flex-group
+
+address {
+    padding: 10px 0;
+    font-style: normal;
+}
+
+.up-text {
+    vertical-align: top;
+    padding-left: 0.7em;
+}
+
+
+
+@media (max-width: 1000px) {
+    .food-section > div {
+        margin: 0.5em;
+        max-width: 45%;
+    }
+
+    .flex-group > div > p:nth-child(odd) {
+        font-weight: bold;
+        line-height: 0.5em;
+        font-size: 1em;
+     }
+     
+     .flex-group > div > p:nth-child(even) {
+        font-weight: bold;
+        font-size: 2.5em;
+        margin-top: -0.5em;
+        text-shadow: -3px -3px 0 #ffc600,
+                      3px -3px 0 #ffc600,
+                     -3px  3px 0 #ffc600,
+                      3px  3px 0 #ffc600;
+     }
+
+}
+
+
+@media (max-width: 625px) {
+
+    #logo-area > img {
+        padding: 3em 0 0 0;
+        width: 35%;
+    }
+
+
+    nav #bt-mobile-menu {
+        display: block;
+    }
+
+    nav .bt-common-menu {
+        display: none;
+    }
+
+    nav .bt-common-menu.active {
+        display: block;
+    }
+
+    nav ul.mobile-mode {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
