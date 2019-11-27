@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\40349113874\\Documents\\csharpe\\RoleTop\\RoleTop.csproj",
+  "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\RoleTop.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2961,53 +2961,53 @@
   "RootNamespace": "RoleTop",
   "Documents": [
     {
-      "FilePath": "Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Home\\Index.cshtml",
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Shared\\_HeaderHomePage.cshtml",
-      "TargetPath": "Views\\Shared\\_HeaderHomePage.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Shared\\_CookieConsentPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Shared\\_HeaderHomePage.cshtml",
+      "TargetPath": "Views\\Shared\\_HeaderHomePage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Shared\\_CookieConsentPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Cliente\\Login.cshtml",
-      "TargetPath": "Views\\Cliente\\Login.cshtml",
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Cliente\\Login.cshtml",
+      "TargetPath": "Views\\Cliente\\Login.cshtml",
       "FileKind": "mvc"
     }
   ],
