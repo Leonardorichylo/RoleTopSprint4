@@ -14,12 +14,12 @@ namespace RoleTop.Controllers
         {
             return View(new BaseViewModel()
             {
-                NomeView = "Login",
+                NomeView = "Cadastro",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()
             });
         }
-        public IActionResult CadastrarCliente(IFormColletion form)
+        public IActionResult CadastrarCliente(IFormCollection form)
         {
             ViewData["Action"] = "Cadastro";
             try{

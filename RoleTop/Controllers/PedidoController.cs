@@ -9,66 +9,76 @@ namespace RoleTop.Controllers
 {
     public class PedidoController : AbstractController
     {
-        ClienteRepository clienteRepository = new ClienteRepository();
         PedidoRepository pedidoRepository = new PedidoRepository();
+        PacoteServicosRepository pacoteServicosRepository = new PacoteServicosRepository();
+        EventoRepository eventoRepository = new EventoRepository();
+        ClienteRepository clienteRepository = new ClienteRepository();
+
 
         public IActionResult Index()
         {
             PedidoViewModel pedido = new PedidoViewModel();
+            pvm.Evento = eventoRepository.ObterTodos();
 
-
-            var emailCliente = ObterUsuarioSession();
-            if(!string.IsNullOrEmpty(emailCliente))
+            var usuarioLogado = ObterUsuarioSession();
+            var nomeUsuarioLogado = ObterUsuarioNomeSession();
+            if(!string.IsNullOrEmpty(nomeUsuarioLogado))
             {
-                pedido.Cliente = clienteRepository.ObterPor(emailCliente);
+                pvm.NomeUsuario = nomeUsuarioLogado;
             }
 
-            var nomeUsuario = ObterUsuarioNomeSession();
-            if(!string.IsNullOrEmpty(nomeUsuario))
+            var clienteLogado = clienteRepository.ObterPor(usuarioLogado);
+            if(clienteLogado != null)
             {
-                pedido.NomeCliente = nomeUsuario;
+                pvm.Cliente = clienteLogado;
             }
-            pedido.NomeView = "Pedido";
 
-            pedido.UsuarioEmail = ObterUsuarioSession();
-            pedido.UsuarioNome = ObterUsuarioNomeSession();
+            pvm.NomeView = "Pedido";
+            pvm.UsuarioEmail = usuarioLogado;
+            pvm.UsuarioNome = nomeUsuarioLogado;
 
-            return View(pedido);
+            return View (pvm);
         }
 
-        public IActionResult Registrar(IFormColletion form)
-        {
+        public IActionResult Registrar (IFormCollection form) {
             ViewData["Action"] = "Pedido";
-            PedidoController pedido = new Pedido();
+            Pedido pedido = new Pedido ();
 
-            Cliente cliente = new Cliente()
-            {
+            var nomeEvento = form["evento"];
+            Evento evento = new Evento ();
+            evento.Nome = nomeEvento;
+            evento.Preco = eventoRepository.ObterPrecoDe(nomeEvento);
+
+            pedido.Evento = evento;
+
+            var nomePacoteServicos = form["pacoteservicos"];
+            PacoteServicos pacoteServicos = new PacoteServicos (
+                nomePacoteServicos,
+                pacoteServicosRepository.ObterPrecoDe(nomePacoteServicos));
+
+                pedido.PacoteServicos = pacoteServicos;
+
+            Cliente cliente = new Cliente(){
                 Nome = form["nome"],
-                Endereco = form ["endereco"],
-                Telefone = form ["telefone"],
-                Email = form ["email"]
+                Endereco = form["endereco"],
+                Telefone = form["telefone"],
+                Email = form["email"]
+
             };
 
             pedido.Cliente = cliente;
 
             pedido.DataDoPedido = DateTime.Now;
-            pedido.PrecoTotal = 1+1;
 
-            if(pedidoRepository.Inserir(pedido))
-            {
-                return View("Sucesso",new RespostaViewModel(){
-                    Mensagem = "Aguarde a aprovação dos nossos administradores"
-                });   
-            }
-            else
-            {
-                return View("Erro",new RespostaViewModel(){
-                    Mensagem = "Houve um erro ao processar seu pedido. Tente novamente",
-                    NomeView = "Login",
-                    UsuarioEmail = ObterUsuarioSession(),
-                    UsuarioNome = ObterUsuarioNomeSession()
-                });
+            pedido.PrecoTotal = evento.Preco + pacoteServicos.Preco;
+
+            if (pedidoRepository.Inserir(pedido)) {
+                return View ("Sucesso");
+            }else {
+                return View ("Erro");
             }
         }
+
     }
+
 }
