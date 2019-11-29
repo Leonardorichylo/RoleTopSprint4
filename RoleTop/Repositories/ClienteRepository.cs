@@ -30,15 +30,20 @@ namespace RoleTop.Repositories
                     Cliente c = new Cliente();
                     c.Nome = ExtrairValorDoCampo ("nome", linha);
                     c.Email = ExtrairValorDoCampo ("email", linha);
-                    c.Senha = ExtrairValorDoCampo ("senha", linha);
+                    c.DataNascimento = DateTime.Parse(ExtrairValorDoCampo("data_nascimento", linha));
                     c.Endereco = ExtrairValorDoCampo ("endereco", linha);
                     c.Telefone = ExtrairValorDoCampo ("telefone", linha);
-                    c.DataNascimento = DateTime.Parse(ExtrairValorDoCampo("data_nascimento", linha));
+                    c.Senha = ExtrairValorDoCampo ("senha", linha);
 
                     return c;
                     
                 }
             }
+            return null;
+        }
+        private string PrepararRegistroCSV(Cliente cliente)
+        {
+            return $"nome={cliente.Nome};email={cliente.Email};senha={cliente.Senha};endereco={cliente.Endereco};telefone={cliente.Telefone};data_nascimento={cliente.DataNascimento}";
         }
     }
 }

@@ -9,7 +9,7 @@ namespace RoleTop.Controllers
     public class ClienteController : AbstractController
     {
         private ClienteRepository clienteRepository = new ClienteRepository();
-        private PedidoRepository pedidoRepository = new PedidoRepository();
+        private OrcamentoRepository orcamentoRepository = new OrcamentoRepository();
         [HttpGet]
         public IActionResult Login()
         {
@@ -61,11 +61,11 @@ namespace RoleTop.Controllers
     public IActionResult Historico()
     {
         var emailCliente = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
-        var pedidos = pedidoRepository.ObterTodosPorCliente(emailCliente);
+        var orcamentos = orcamentoRepository.ObterTodosPorCliente(emailCliente);
         
         return View(new HistoricoViewModel()
         {
-            pedidos = pedidos,
+            orcamentos = orcamentos,
             NomeView = "Login",
             UsuarioEmail = ObterUsuarioSession(),
             UsuarioNome = ObterUsuarioNomeSession()
