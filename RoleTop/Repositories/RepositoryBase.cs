@@ -9,10 +9,10 @@ namespace RoleTop.Repositories
             var indiceTerminal = linha.IndexOf (";", indiceChave);
 
             var valor ="";
+
             if(indiceTerminal != -1)
             {
                 valor = linha.Substring (indiceChave, indiceTerminal - indiceChave);
-
             } else {
                 valor = linha.Substring (indiceChave);
             }

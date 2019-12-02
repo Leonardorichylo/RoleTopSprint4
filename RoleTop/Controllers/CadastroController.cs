@@ -1,4 +1,5 @@
 using System;
+using RoleTop.Enums;
 using RoleTop.Models;
 using RoleTop.Repositories;
 using RoleTop.ViewModels;
@@ -29,15 +30,28 @@ namespace RoleTop.Controllers
                     form["telefone"],
                     form["senha"],
                     form["email"],
-                    DateTime.Parse(form["data-nascimento"])
-                );
+                    DateTime.Parse(form["data-nascimento"]));
+                cliente.TipoUsuario = (uint) TiposUsuario.CLIENTE;
+
                 clienteRepositorio.Inserir(cliente);
 
-                return View("Sucesso");
+                return View("Sucesso", new RespostaViewModel()
+                {
+                    NomeView = "Cadastro",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
             }
             catch(Exception e)
             {
-                return View("Erro");
+                System.Console.WriteLine(e.StackTrace);
+
+                return View("Erro", new RespostaViewModel()
+                {
+                    NomeView = "Cadastro",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
             }
         }
     }

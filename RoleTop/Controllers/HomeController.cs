@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using RoleTop.Models;
 using RoleTop.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace RoleTop.Controllers
 {
@@ -13,12 +12,7 @@ namespace RoleTop.Controllers
     {
         public IActionResult Index()
         {
-            return View(new BaseViewModel()
-            {
-                NomeView = "Home",
-                UsuarioNome = ObterUsuarioNomeSession(),
-                UsuarioEmail = ObterUsuarioSession()
-            });
+            return View(new BaseViewModel(){NomeView = "Home",UsuarioEmail = ObterUsuarioSession(),UsuarioNome = ObterUsuarioNomeSession()});
         }
 
         public IActionResult Privacy()

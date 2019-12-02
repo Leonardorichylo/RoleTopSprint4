@@ -1,4 +1,5 @@
 using System;
+using RoleTop.Enums;
 using RoleTop.Models;
 using RoleTop.Repositories;
 using RoleTop.ViewModels;
@@ -17,8 +18,9 @@ namespace RoleTop.Controllers
 
         public IActionResult Index()
         {
-            OrcamentoViewModel orcamento = new OrcamentoViewModel();
-            ovm.Evento = eventoRepository.ObterTodos();
+            OrcamentoViewModel ovm = new OrcamentoViewModel();
+            ovm.Eventos = eventoRepository.ObterTodos();
+            ovm.PacotesServicos = pacoteServicosRepository.ObterTodos();
 
             var usuarioLogado = ObterUsuarioSession();
             var nomeUsuarioLogado = ObterUsuarioNomeSession();
@@ -44,19 +46,21 @@ namespace RoleTop.Controllers
             ViewData["Action"] = "Orcamento";
             Orcamento orcamento = new Orcamento ();
 
+
             var nomeEvento = form["evento"];
-            Evento evento = new Evento ();
-            evento.Nome = nomeEvento;
-            evento.Preco = eventoRepository.ObterPrecoDe(nomeEvento);
+            Evento evento = new Evento (
+                nomeEvento,
+                eventoRepository.ObterPrecoDe(nomeEvento));
 
             orcamento.Evento = evento;
 
             var nomePacoteServicos = form["pacoteservicos"];
-            PacoteServicos pacoteServicos = new PacoteServicos (
-                nomePacoteServicos,
-                pacoteServicosRepository.ObterPrecoDe(nomePacoteServicos));
+            PacoteServicos pacoteServicos = new PacoteServicos ();
+            pacoteServicos.Nome = nomePacoteServicos;
+            pacoteServicos.Preco = pacoteServicosRepository.ObterPrecoDe(nomePacoteServicos);
 
-                orcamento.PacoteServicos = pacoteServicos;
+            orcamento.PacoteServicos = pacoteServicos;
+
 
             Cliente cliente = new Cliente(){
                 Nome = form["nome"],
@@ -81,7 +85,7 @@ namespace RoleTop.Controllers
 
                 });
             }else {
-                return View ("Erro", new RespostaViewModelViewModel()
+                return View ("Erro", new RespostaViewModel()
                 {
                     NomeView = "Orcamento",
                     UsuarioEmail = ObterUsuarioSession(),
@@ -94,15 +98,15 @@ namespace RoleTop.Controllers
     {
         Orcamento orcamento = orcamentoRepository.ObterPor(id);
         orcamento.Status = (uint) StatusOrcamento.APROVADO;
+
         if(orcamentoRepository.Atualizar(orcamento))
         {
             return RedirectToAction("Dashboard","Administrador");
         }
         else
         {
-            return View ("Erro", new RespostaViewModel()
+            return View ("Erro", new RespostaViewModel("Não foi possível aprovar este pedido")
             {
-                Mensagem = "Houve um erro ao Aprovar pedido.",
                 NomeView = "Dashboard",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()
@@ -120,15 +124,14 @@ namespace RoleTop.Controllers
         }
         else
         {
-            return View ("Erro", new RespostaViewModel()
+            return View ("Erro", new RespostaViewModel("Não foi possível reprovar este pedido")
             {
-                Mensagem = "Houve um erro ao Reprovar pedido.",
                 NomeView = "Dashboard",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()
             });
         }
     }
-    }
+}
 
 }

@@ -7,6 +7,7 @@ namespace RoleTop.Controllers
     {
         protected const string SESSION_CLIENTE_EMAIL = "cliente_email";
         protected const string SESSION_CLIENTE_NOME = "cliente_nome";
+        protected const string SESSION_CLIENTE_TIPO = "cliente_tipo";
 
         protected string ObterUsuarioSession()
         {
@@ -28,6 +29,19 @@ namespace RoleTop.Controllers
                 return nome;
             }
             else{
+                return "";
+            }
+        }
+
+        protected string ObterUsuarioTipoSession()
+        {
+            var tipoUsuario = HttpContext.Session.GetString(SESSION_CLIENTE_TIPO);
+            if (!string.IsNullOrEmpty(tipoUsuario))
+            {
+                return tipoUsuario;
+            } 
+            else
+            {
                 return "";
             }
         }

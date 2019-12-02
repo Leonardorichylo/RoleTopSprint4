@@ -2961,6 +2961,11 @@
   "RootNamespace": "RoleTop",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Cadastro\\Index.cshtml",
+      "TargetPath": "Views\\Cadastro\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -2971,6 +2976,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Cliente\\Historico.cshtml",
+      "TargetPath": "Views\\Cliente\\Historico.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Shared\\_HeaderHomePage.cshtml",
       "TargetPath": "Views\\Shared\\_HeaderHomePage.cshtml",
       "FileKind": "mvc"
@@ -2978,6 +2988,11 @@
     {
       "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Administrador\\Dashboard.cshtml",
+      "TargetPath": "Views\\Administrador\\Dashboard.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3008,6 +3023,11 @@
     {
       "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Cliente\\Login.cshtml",
       "TargetPath": "Views\\Cliente\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Orcamento\\Index.cshtml",
+      "TargetPath": "Views\\Orcamento\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],

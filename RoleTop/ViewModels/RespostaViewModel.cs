@@ -1,10 +1,16 @@
 namespace RoleTop.ViewModels
 {
-    public class RespostaViewModel
+    public class RespostaViewModel : BaseViewModel
     {
-        public string NomeView {get;set;}
-        public string UsuarioNome {get;set;}
-        public string UsuarioEmail {get;set;}
+        public string Mensagem {get;set;}
+        public RespostaViewModel()
+        {
+
+        }
         
+        public RespostaViewModel(string mensagem)
+        {
+            this.Mensagem = mensagem;
+        }
     }
 }

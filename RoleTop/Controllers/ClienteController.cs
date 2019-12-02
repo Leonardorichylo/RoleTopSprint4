@@ -1,4 +1,5 @@
 using System;
+using RoleTop.Enums;
 using RoleTop.Repositories;
 using RoleTop.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -15,7 +16,7 @@ namespace RoleTop.Controllers
         {
             
             return View(new BaseViewModel(){
-                NomewView = "Login",
+                NomeView = "Login",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()
             });
@@ -36,9 +37,22 @@ namespace RoleTop.Controllers
                 {
                     if(cliente.Senha.Equals(senha))
                     {
+                        switch(cliente.TipoUsuario){
+                            case (uint) TiposUsuario.CLIENTE:
                         HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
                         HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
+                        HttpContext.Session.SetString(SESSION_CLIENTE_TIPO, cliente.TipoUsuario.ToString());
                         return RedirectToAction("Historico","Cliente");
+
+                        default:
+                        HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario);
+                        HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
+                        HttpContext.Session.SetString(SESSION_CLIENTE_TIPO, cliente.TipoUsuario.ToString());
+                                
+                        return RedirectToAction("Dashboard","Administrador");
+                        
+                        }
+                        
                     }
                     else
                     {
@@ -52,21 +66,19 @@ namespace RoleTop.Controllers
         }
         catch (Exception e)
         {
-            System.Console.WriteLine("===============");
             System.Console.WriteLine(e.StackTrace);
-            System.Console.WriteLine("===============");
             return View("Erro");
         }
     }
     public IActionResult Historico()
     {
-        var emailCliente = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
-        var orcamentos = orcamentoRepository.ObterTodosPorCliente(emailCliente);
+        var emailCliente = ObterUsuarioSession();
+        var orcamentosCliente = orcamentoRepository.ObterTodosPorCliente(emailCliente);
         
         return View(new HistoricoViewModel()
         {
-            orcamentos = orcamentos,
-            NomeView = "Login",
+            Orcamentos = orcamentosCliente,
+            NomeView = "Histórico",
             UsuarioEmail = ObterUsuarioSession(),
             UsuarioNome = ObterUsuarioNomeSession()
         });
