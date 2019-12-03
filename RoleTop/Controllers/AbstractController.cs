@@ -20,7 +20,6 @@ namespace RoleTop.Controllers
                 return "";
             }
         }
-
         protected string ObterUsuarioNomeSession()
         {
             var nome = HttpContext.Session.GetString(SESSION_CLIENTE_NOME);
@@ -28,7 +27,8 @@ namespace RoleTop.Controllers
             {
                 return nome;
             }
-            else{
+            else
+            {
                 return "";
             }
         }

@@ -45,7 +45,7 @@ namespace RoleTop.Repositories
                 Orcamento orcamento = new Orcamento ();
 
                 orcamento.Id = ulong.Parse(ExtrairValorDoCampo("id", linha));
-                orcamento.Status = uint.Parse(ExtrairValorDoCampo("status_pedido", linha));
+                orcamento.Status = uint.Parse(ExtrairValorDoCampo("status_orcamento", linha));
                 orcamento.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                 orcamento.Cliente.Endereco = ExtrairValorDoCampo("cliente_endereco",linha);
                 orcamento.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);

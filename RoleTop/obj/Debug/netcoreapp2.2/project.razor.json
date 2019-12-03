@@ -2966,6 +2966,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Shared\\Erro.cshtml",
+      "TargetPath": "Views\\Shared\\Erro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -3008,6 +3013,11 @@
     {
       "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Shared\\_CookieConsentPartial.cshtml",
       "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\40349113874\\Documents\\RoleTopSprint4\\RoleTop\\Views\\Shared\\Sucesso.cshtml",
+      "TargetPath": "Views\\Shared\\Sucesso.cshtml",
       "FileKind": "mvc"
     },
     {

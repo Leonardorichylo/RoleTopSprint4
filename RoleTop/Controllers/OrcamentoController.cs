@@ -11,8 +11,8 @@ namespace RoleTop.Controllers
     public class OrcamentoController : AbstractController
     {
         OrcamentoRepository orcamentoRepository = new OrcamentoRepository();
+         EventoRepository eventoRepository = new EventoRepository();
         PacoteServicosRepository pacoteServicosRepository = new PacoteServicosRepository();
-        EventoRepository eventoRepository = new EventoRepository();
         ClienteRepository clienteRepository = new ClienteRepository();
 
 
@@ -46,14 +46,6 @@ namespace RoleTop.Controllers
             ViewData["Action"] = "Orcamento";
             Orcamento orcamento = new Orcamento ();
 
-
-            var nomeEvento = form["evento"];
-            Evento evento = new Evento (
-                nomeEvento,
-                eventoRepository.ObterPrecoDe(nomeEvento));
-
-            orcamento.Evento = evento;
-
             var nomePacoteServicos = form["pacoteservicos"];
             PacoteServicos pacoteServicos = new PacoteServicos ();
             pacoteServicos.Nome = nomePacoteServicos;
@@ -61,6 +53,12 @@ namespace RoleTop.Controllers
 
             orcamento.PacoteServicos = pacoteServicos;
 
+            var nomeEvento = form["evento"];
+            Evento evento = new Evento (
+                nomeEvento,
+                eventoRepository.ObterPrecoDe(nomeEvento));
+
+            orcamento.Evento = evento;
 
             Cliente cliente = new Cliente(){
                 Nome = form["nome"],
@@ -96,7 +94,8 @@ namespace RoleTop.Controllers
 
         public IActionResult Aprovar(ulong id)
     {
-        Orcamento orcamento = orcamentoRepository.ObterPor(id);
+
+        var orcamento = orcamentoRepository.ObterPor(id);
         orcamento.Status = (uint) StatusOrcamento.APROVADO;
 
         if(orcamentoRepository.Atualizar(orcamento))
@@ -105,7 +104,7 @@ namespace RoleTop.Controllers
         }
         else
         {
-            return View ("Erro", new RespostaViewModel("Não foi possível aprovar este pedido")
+            return View ("Erro", new RespostaViewModel("Não foi possível aprovar este orçamento")
             {
                 NomeView = "Dashboard",
                 UsuarioEmail = ObterUsuarioSession(),
@@ -116,15 +115,16 @@ namespace RoleTop.Controllers
         
         public IActionResult Reprovar(ulong id)
     {
-        Orcamento orcamento = orcamentoRepository.ObterPor(id);
+        var orcamento = orcamentoRepository.ObterPor(id);
         orcamento.Status = (uint) StatusOrcamento.REPROVADO;
+
         if(orcamentoRepository.Atualizar(orcamento))
         {
             return RedirectToAction("Dashboard","Administrador");
         }
         else
         {
-            return View ("Erro", new RespostaViewModel("Não foi possível reprovar este pedido")
+            return View ("Erro", new RespostaViewModel("Não foi possível reprovar este orçamento")
             {
                 NomeView = "Dashboard",
                 UsuarioEmail = ObterUsuarioSession(),

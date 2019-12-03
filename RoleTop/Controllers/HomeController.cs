@@ -12,7 +12,11 @@ namespace RoleTop.Controllers
     {
         public IActionResult Index()
         {
-            return View(new BaseViewModel(){NomeView = "Home",UsuarioEmail = ObterUsuarioSession(),UsuarioNome = ObterUsuarioNomeSession()});
+            return View(new BaseViewModel(){
+                NomeView = "Home",
+                UsuarioEmail = ObterUsuarioSession(),
+                UsuarioNome = ObterUsuarioNomeSession()
+                });
         }
 
         public IActionResult Privacy()

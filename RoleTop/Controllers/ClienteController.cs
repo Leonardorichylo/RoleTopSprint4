@@ -25,14 +25,18 @@ namespace RoleTop.Controllers
         public IActionResult Login(IFormCollection form)
         {
             ViewData["Action"] = "Login";
-            try{
-                System.Console.WriteLine("===============");
+            try
+            {
+                System.Console.WriteLine("==================");
                 System.Console.WriteLine(form["email"]);
                 System.Console.WriteLine(form["senha"]);
-                System.Console.WriteLine("===============");
+                System.Console.WriteLine("==================");
+
                 var usuario = form["email"];
                 var senha = form["senha"];
+
                 var cliente = clienteRepository.ObterPor(usuario);
+
                 if (cliente != null)
                 {
                     if(cliente.Senha.Equals(senha))
@@ -84,11 +88,11 @@ namespace RoleTop.Controllers
         });
     }
     public IActionResult Logoff()
-    {
-        HttpContext.Session.Remove(SESSION_CLIENTE_EMAIL);
-        HttpContext.Session.Remove(SESSION_CLIENTE_NOME);
-        HttpContext.Session.Clear();
-        return RedirectToAction("Index","Home");
-    }
+        {
+            HttpContext.Session.Remove(SESSION_CLIENTE_EMAIL);
+            HttpContext.Session.Remove(SESSION_CLIENTE_NOME);
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index","Home");
+        }
     }
 }

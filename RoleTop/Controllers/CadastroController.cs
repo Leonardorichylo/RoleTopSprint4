@@ -10,7 +10,7 @@ namespace RoleTop.Controllers
 {
     public class CadastroController : AbstractController
     {
-        ClienteRepository clienteRepositorio = new ClienteRepository();
+        ClienteRepository clienteRepository = new ClienteRepository();
         public IActionResult Index()
         {
             return View(new BaseViewModel()
@@ -31,9 +31,10 @@ namespace RoleTop.Controllers
                     form["senha"],
                     form["email"],
                     DateTime.Parse(form["data-nascimento"]));
+                
                 cliente.TipoUsuario = (uint) TiposUsuario.CLIENTE;
 
-                clienteRepositorio.Inserir(cliente);
+                clienteRepository.Inserir(cliente);
 
                 return View("Sucesso", new RespostaViewModel()
                 {
