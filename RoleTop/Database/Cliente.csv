@@ -1,2 +1,2 @@
-tipo_usuario=0;nome=Administrador;email=admin@email.com;senha=123123;endereco=;telefone=;data_nascimento=01/01/0001 00:00:00
-tipo_usuario=1;nome=Fulano;email=fulano@email.com;senha=123123;endereco=BlaBl4474a;telefone=11 99999-9999;data_nascimento=14/11/2019 00:00:00
+tipo_usuario=0;nome=Admin;email=admin@email.com;senha=123123;endereco=qalquer;telefone=12345678910;cpf=1234567891011;data_nascimento=10/01/1994 00:00:00
+tipo_usuario=1;nome=Fulano;email=fulano@email.com;senha=123123;endereco=avenida 123;telefone=12345678910;cpf=1234567891011;data_nascimento=01/01/1994 00:00:00

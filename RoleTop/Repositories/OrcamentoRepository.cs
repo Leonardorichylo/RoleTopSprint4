@@ -47,13 +47,13 @@ namespace RoleTop.Repositories
                 orcamento.Id = ulong.Parse(ExtrairValorDoCampo("id", linha));
                 orcamento.Status = uint.Parse(ExtrairValorDoCampo("status_orcamento", linha));
                 orcamento.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
-                orcamento.Cliente.Endereco = ExtrairValorDoCampo("cliente_endereco",linha);
+                orcamento.Cliente.Endereco = ExtrairValorDoCampo("cliente_endereco", linha);
                 orcamento.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
                 orcamento.Cliente.Email = ExtrairValorDoCampo("cliente_email", linha);
                 orcamento.Evento.Nome = ExtrairValorDoCampo("evento_nome", linha);
                 orcamento.Evento.Preco = double.Parse(ExtrairValorDoCampo("evento_preco", linha));
-                orcamento.PacoteServicos.Nome = ExtrairValorDoCampo("pacoteservicos_nome", linha);
-                orcamento.PacoteServicos.Preco = double.Parse(ExtrairValorDoCampo("pacoteservicos_preco", linha));
+                orcamento.PacoteServicos.Nome = ExtrairValorDoCampo("pacoteServicos_nome", linha);
+                orcamento.PacoteServicos.Preco = double.Parse(ExtrairValorDoCampo("pacoteServicos_preco", linha));
                 orcamento.PrecoTotal = double.Parse(ExtrairValorDoCampo("preco_total", linha));
                 orcamento.DataDoOrcamento = DateTime.Parse(ExtrairValorDoCampo("data_orcamento", linha));
 
@@ -105,7 +105,7 @@ namespace RoleTop.Repositories
             Evento e = orcamento.Evento;
             PacoteServicos p = orcamento.PacoteServicos;
 
-            return $"id={orcamento.Id};status_orcamento={orcamento.Status};cliente_nome={c.Nome}cliente_endereco={c.Endereco};cliente_telefone={c.Telefone};cliente_email={c.Email};evento_nome={e.Nome};evento_preco={e.Preco};pacoteServicos_nome={p.Nome};pacoteServicos_preco={p.Preco};data_orcamento={orcamento.DataDoOrcamento};preco_total={orcamento.PrecoTotal}";
+            return $"id={orcamento.Id};status_orcamento={orcamento.Status};cliente_nome={c.Nome};cliente_endereco={c.Endereco};cliente_telefone={c.Telefone};cliente_email={c.Email};evento_nome={e.Nome};evento_preco={e.Preco};pacoteServicos_nome={p.Nome};pacoteServicos_preco={p.Preco};data_orcamento={orcamento.DataDoOrcamento};preco_total={orcamento.PrecoTotal}";
         }
     }
 }

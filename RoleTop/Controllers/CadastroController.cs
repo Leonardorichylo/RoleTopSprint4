@@ -30,6 +30,7 @@ namespace RoleTop.Controllers
                     form["telefone"],
                     form["senha"],
                     form["email"],
+                    form["cpf"],
                     DateTime.Parse(form["data-nascimento"]));
                 
                 cliente.TipoUsuario = (uint) TiposUsuario.CLIENTE;

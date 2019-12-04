@@ -15,7 +15,8 @@ namespace RoleTop.Controllers
         public IActionResult Login()
         {
             
-            return View(new BaseViewModel(){
+            return View(new BaseViewModel()
+            {
                 NomeView = "Login",
                 UsuarioEmail = ObterUsuarioSession(),
                 UsuarioNome = ObterUsuarioNomeSession()

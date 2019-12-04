@@ -11,7 +11,7 @@ namespace RoleTop.Controllers
     public class OrcamentoController : AbstractController
     {
         OrcamentoRepository orcamentoRepository = new OrcamentoRepository();
-         EventoRepository eventoRepository = new EventoRepository();
+        EventoRepository eventoRepository = new EventoRepository();
         PacoteServicosRepository pacoteServicosRepository = new PacoteServicosRepository();
         ClienteRepository clienteRepository = new ClienteRepository();
 

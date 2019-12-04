@@ -1,7 +1,6 @@
 @model RoleTop.ViewModels.DashboardViewModel
     <main>
         <h2>Dashboard</h2>
-
         <section id="status-orcamentos">
             <h3>Status dos Orçamentos</h3>
             <div id="painel">
@@ -14,25 +13,26 @@
                     <p>@Model.OrcamentosPendentes</p>
                 </div>
                 <div class="box-status-orcamentos reprovados">
-                    <h4>Recusados</h4>
+                    <h4>Reprovados</h4>
                     <p>@Model.OrcamentosReprovados</p>
                 </div>
             </div>
         </section>
 
         <section id="lista-orcamentos">
-            <h3>Lista de Orçamentos</h3>
+            <h3>Lista de orçamentos</h3>
             <table>
                 <thead>
                     <tr>
                         <th rowspan="2">Nome</th>
                         <th rowspan="2">Endereço</th>
-                        <th colspan="2">Pedido</th>
+                        <th colspan="3">Orçamento</th>
                         <th colspan="2" rowspan="2">Aprovar</th>
                     </tr>
                     <tr>
-                        <th><i class="fas fa-calendar-week"></i></th>
                         <th>Evento</th>
+                        <th>PacoteServicos</th> 
+                        <th></th>
                         <th></th>
                         <th></th>
                     </tr>

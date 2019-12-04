@@ -12,7 +12,7 @@ namespace RoleTop.Models
         public DateTime DataDoOrcamento {get;set;}
 
         public double PrecoTotal {get;set;}
-public uint Status {get;set;}
+        public uint Status {get;set;}
         public Orcamento()
         {
             this.Cliente = new Cliente();

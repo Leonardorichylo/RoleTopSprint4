@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace RoleTop
 {
-    public class Startup
+        public class Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -35,7 +35,7 @@ namespace RoleTop
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromSeconds(15);
+                options.IdleTimeout = TimeSpan.FromSeconds(99999);
                 options.Cookie.IsEssential = true;
             });
         }

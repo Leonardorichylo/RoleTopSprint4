@@ -31,9 +31,11 @@ namespace RoleTop.Repositories
                     c.Nome = ExtrairValorDoCampo ("nome", item);
                     c.TipoUsuario = uint.Parse(ExtrairValorDoCampo("tipo_usuario", item));
                     c.Email = ExtrairValorDoCampo ("email", item);
-                    c.DataNascimento = DateTime.Parse(ExtrairValorDoCampo("data_nascimento", item));
+                    c.DataNascimento = 
+                    DateTime.Parse(ExtrairValorDoCampo("data_nascimento", item));
                     c.Endereco = ExtrairValorDoCampo ("endereco", item);
                     c.Telefone = ExtrairValorDoCampo ("telefone", item);
+                    c.Cpf = ExtrairValorDoCampo ("cpf", item);
                     c.Senha = ExtrairValorDoCampo ("senha", item);
 
                     return c;
@@ -44,7 +46,7 @@ namespace RoleTop.Repositories
         }
         private string PrepararRegistroCSV(Cliente cliente)
         {
-            return $"tipo_usuario={cliente.TipoUsuario};nome={cliente.Nome};email={cliente.Email};senha={cliente.Senha};endereco={cliente.Endereco};telefone={cliente.Telefone};data_nascimento={cliente.DataNascimento}";
+            return $"tipo_usuario={cliente.TipoUsuario};nome={cliente.Nome};email={cliente.Email};senha={cliente.Senha};endereco={cliente.Endereco};telefone={cliente.Telefone};cpf={cliente.Cpf};data_nascimento={cliente.DataNascimento}";
         }
     }
 }
