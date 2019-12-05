@@ -72,7 +72,7 @@ namespace RoleTop.Controllers
 
             orcamento.DataDoOrcamento = DateTime.Now;
 
-            orcamento.PrecoTotal = evento.Preco + pacoteServicos.Preco;
+            orcamento.PrecoTotal = (evento.Preco + pacoteServicos.Preco);
 
             if (orcamentoRepository.Inserir(orcamento)) {
                 return View ("Sucesso", new RespostaViewModel()
