@@ -55,6 +55,7 @@ namespace RoleTop.Repositories
                 orcamento.PacoteServicos.Nome = ExtrairValorDoCampo("pacoteServicos_nome", linha);
                 orcamento.PacoteServicos.Preco = double.Parse(ExtrairValorDoCampo("pacoteServicos_preco", linha));
                 orcamento.PrecoTotal = double.Parse(ExtrairValorDoCampo("preco_total", linha));
+                orcamento.DataDoEvento = DateTime.Parse(ExtrairValorDoCampo("data_evento", linha));
                 orcamento.DataDoOrcamento = DateTime.Parse(ExtrairValorDoCampo("data_orcamento", linha));
 
                 orcamentos.Add(orcamento);
@@ -105,7 +106,7 @@ namespace RoleTop.Repositories
             Evento e = orcamento.Evento;
             PacoteServicos p = orcamento.PacoteServicos;
 
-            return $"id={orcamento.Id};status_orcamento={orcamento.Status};cliente_nome={c.Nome};cliente_endereco={c.Endereco};cliente_telefone={c.Telefone};cliente_email={c.Email};evento_nome={e.Nome};evento_preco={e.Preco};pacoteServicos_nome={p.Nome};pacoteServicos_preco={p.Preco};data_orcamento={orcamento.DataDoOrcamento};preco_total={orcamento.PrecoTotal}";
+            return $"id={orcamento.Id};status_orcamento={orcamento.Status};cliente_nome={c.Nome};cliente_endereco={c.Endereco};cliente_telefone={c.Telefone};cliente_email={c.Email};evento_nome={e.Nome};evento_preco={e.Preco};pacoteServicos_nome={p.Nome};pacoteServicos_preco={p.Preco};data_orcamento={orcamento.DataDoOrcamento};data_evento={orcamento.DataDoEvento};preco_total={orcamento.PrecoTotal}";
         }
     }
 }

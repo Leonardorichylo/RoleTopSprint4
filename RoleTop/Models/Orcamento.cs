@@ -10,7 +10,7 @@ namespace RoleTop.Models
         public Evento Evento {get;set;}
         public PacoteServicos PacoteServicos {get;set;}
         public DateTime DataDoOrcamento {get;set;}
-
+        public DateTime DataDoEvento {get;set;}
         public double PrecoTotal {get;set;}
         public uint Status {get;set;}
         public Orcamento()

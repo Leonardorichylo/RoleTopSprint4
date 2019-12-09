@@ -2,3 +2,4 @@ tipo_usuario=0;nome=Admin;email=admin@email.com;senha=123123;endereco=qalquer;te
 tipo_usuario=1;nome=Leonardo;email=leonardo@email.com;senha=123123;endereco=avenida 123;telefone=12345678910;cpf=1234567891011;data_nascimento=01/01/1994 00:00:00
 tipo_usuario=1;nome=teste;email=teste@email.com;senha=123123;endereco=rua 123;telefone=123456789;cpf=12345679203;data_nascimento=01/01/1999 00:00:00
 tipo_usuario=1;nome=123456;email=123@email.com;senha=123123;endereco=av123;telefone=99999999999;cpf=1234567891561;data_nascimento=01/01/2000 00:00:00
+tipo_usuario=1;nome=henrique;email=henrique@email.com;senha=123123;endereco=rua 123;telefone=123456789;cpf=1234561564;data_nascimento=01/01/1990 00:00:00

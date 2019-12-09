@@ -1,7 +1,7 @@
 @model RoleTop.ViewModels.OrcamentoViewModel
 <main>
         <h2>Faça seu Orçamento! @Model.NomeUsuario</h2>
-        <form method="GET" action='@Url.Action("Registrar","Orcamento")'>
+        <form method="POST" action='@Url.Action("Registrar","Orcamento")'>
                     <div>
                         <label for="nome">Nome Completo</label>
                         <br />
@@ -30,6 +30,10 @@
                         <label for="cpf">CPF</label>
                         <br />
                         <input id="cpf" type="cpf" name="cpf" placeholder="123.456.789-56" value="@Model.Cliente.Cpf" />
+                    
+                    <div class="double-field">
+                        <label for="data_evento">Data do Evento:</label>
+                        <input id="evento_evento" type="date" name="data_evento"><br><br>
                     </div>
         
                     <div class="double-field">

@@ -27,26 +27,26 @@ h4 {
     font-family: 'Fredoka One', cursive;
 }
 
-.box-status-pedidos {
+.box-status-orcamentos {
     width: 30%;
     padding-top: .5em;
     text-align: center;
 }
-.box-status-pedidos > p {
+.box-status-orcamentos > p {
     font-size: 2em;
     padding: 0.5em 0 0 0;
 }
 
-.box-status-pedidos.reprovados {
-    background-color: red;
+.box-status-orcamentos.reprovados {
+    background-color: rgb(255, 20, 20);
 }
 
-.box-status-pedidos.aprovados {
-    background-color: green;
+.box-status-orcamentos.aprovados {
+    background-color: rgb(20, 168, 20);
 }
 
-.box-status-pedidos.pendentes {
-    background-color: yellow;
+.box-status-orcamentos.pendentes {
+    background-color: orange;
 }
 
 table {
