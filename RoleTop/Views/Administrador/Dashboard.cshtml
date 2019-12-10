@@ -26,12 +26,13 @@
                     <tr>
                         <th rowspan="2">Nome</th>
                         <th rowspan="2">Endereço</th>
-                        <th colspan="2">Orçamento</th>
+                        <th colspan="3">Orçamento</th>
                         <th colspan="2" rowspan="2">Aprovar</th>
                     </tr>
                     <tr>
                         <th>Evento</th>
                         <th>PacoteServicos</th> 
+                        <th>TipoEvento</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -51,6 +52,7 @@
                         <td>@orcamento.Cliente.Endereco</td>
                         <td>@orcamento.Evento.Nome</td>
                         <td>@orcamento.PacoteServicos.Nome</td>
+                        <td>@orcamento.TipoEvento</td>
                         <td><a href='@Url.Action("Aprovar", "Orcamento", new {id = @orcamento.Id})'><i class="fas fa-check"></i></a></td>
                         <td><a href='@Url.Action("Reprovar", "Orcamento", new {id = @orcamento.Id})'><i class="fas fa-times"></i></a></td>
                         </tr>

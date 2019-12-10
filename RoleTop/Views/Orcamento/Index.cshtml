@@ -35,7 +35,8 @@
                         <label for="data_evento">Data do Evento:</label>
                         <input id="evento_evento" type="date" name="data_evento"><br><br>
                     </div>
-        
+
+
                     <div class="double-field">
                         <div>
                             <label for="evento">Evento</label>
@@ -43,9 +44,7 @@
                                 <option value= "" disabled selected>Selecione</option>
                                 @foreach (var evento in Model.Eventos)
                                 {
-                                    <option value=@evento.Nome>@evento.Nome por @evento.Preco
-                                        
-                                    </option>
+                                    <option value=@evento.Nome>@evento.Nome por @evento.Preco</option>
                                 }
                             </select>
                             </div>
@@ -60,6 +59,25 @@
                             </select>
                         </div>
                     </div>
+                    
+                    <div>
+                        <label for="tipo_evento">Tipo de Evento</label>
+                            <select id="tipo_evento" name="tipo_evento" required>
+                                <option value="" disabled selected>Selecione</option>
+                                <option>Publico</option>
+                                <option>Fechado</option>
+                            </select>
+                    </div>
+
+                    <div>
+                        <label for="forma_pagamento">Forma de Pagamento</label>
+                            <select id="forma_pagamento" name="forma_pagamento" required>
+                                <option value="" disabled selected>Selecione</option>
+                                <option >Cartão de Credito</option>
+                                <option >Boleto</option>
+                            </select>
+                    </div>
+
 
                     <p>Após a confirmação do pagamento, analisaremos o Orçamento, caso seja recusado o valor será estornado.</p>
                     <input type="submit" value="Finalizar Orçamento!" />

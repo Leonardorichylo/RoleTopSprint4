@@ -71,8 +71,14 @@ namespace RoleTop.Controllers
             orcamento.Cliente = cliente;
 
             orcamento.DataDoOrcamento = DateTime.Now;
+            
+            orcamento.DataDoEvento = DateTime.Parse(form["data_evento"]);
 
             orcamento.PrecoTotal = (evento.Preco + pacoteServicos.Preco);
+
+            orcamento.FormaPagamento = (form["forma_pagamento"]);
+
+            orcamento.TipoEvento = (form["tipo_evento"]);
 
             if (orcamentoRepository.Inserir(orcamento)) {
                 return View ("Sucesso", new RespostaViewModel()

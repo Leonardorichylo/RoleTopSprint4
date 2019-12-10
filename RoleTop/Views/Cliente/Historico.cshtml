@@ -8,19 +8,31 @@
     <table>
         <thead>
             <tr>
-                <th>Data</th>
+                <th>Data Solicitado</th>
+                <th>Data do Evento</th>
                 <th>Evento</th>
                 <th>Pacote Servicos</th>
                 <th>Preço</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
             @foreach( var orcamento in Model.Orcamentos ) {
                 <tr>
                     <td>@orcamento.DataDoOrcamento</td>
+                    <td>@orcamento.DataDoEvento</td>
                     <td>@orcamento.Evento.Nome</td>
                     <td>@orcamento.PacoteServicos.Nome</td>
                     <td>@orcamento.PrecoTotal</td>
+                    @if(@orcamento.Status ==0){
+                        <td>PENDENTE</td>
+                    }
+                    else if(@orcamento.Status ==1){
+                        <td>APROVADO</td>
+                    }
+                    else if(@orcamento.Status ==2){
+                        <td>REPROVADO</td>
+                    }
                 </tr>
             }
         </tbody>
