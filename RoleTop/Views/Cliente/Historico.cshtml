@@ -19,19 +19,19 @@
         <tbody>
             @foreach( var orcamento in Model.Orcamentos ) {
                 <tr>
-                    <td>@orcamento.DataDoOrcamento</td>
-                    <td>@orcamento.DataDoEvento</td>
-                    <td>@orcamento.Evento.Nome</td>
-                    <td>@orcamento.PacoteServicos.Nome</td>
-                    <td>@orcamento.PrecoTotal</td>
+                    <td><p>@orcamento.DataDoOrcamento</p></td>
+                    <td><p>@orcamento.DataDoEvento</p></td>
+                    <td><p>@orcamento.Evento.Nome</p></td>
+                    <td><p>@orcamento.PacoteServicos.Nome</p></td>
+                    <td><p>@orcamento.PrecoTotal</p></td>
                     @if(@orcamento.Status ==0){
-                        <td>PENDENTE</td>
+                        <td><p>PENDENTE</p></td>
                     }
                     else if(@orcamento.Status ==1){
-                        <td>APROVADO</td>
+                        <td><p>APROVADO</p></td>
                     }
                     else if(@orcamento.Status ==2){
-                        <td>REPROVADO</td>
+                        <td><p>REPROVADO</p></td>
                     }
                 </tr>
             }

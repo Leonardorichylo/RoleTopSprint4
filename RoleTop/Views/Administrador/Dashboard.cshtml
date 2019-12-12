@@ -26,21 +26,23 @@
                     <tr>
                         <th rowspan="2">Nome</th>
                         <th rowspan="2">Endereço</th>
-                        <th colspan="3">Orçamento</th>
+                        <th colspan="5">Orçamento</th>
                         <th colspan="2" rowspan="2">Aprovar</th>
                     </tr>
                     <tr>
+                        <th>Data Evento</th>
                         <th>Evento</th>
                         <th>PacoteServicos</th> 
                         <th>TipoEvento</th>
+                        <th>FormaPagamento</th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
-                        <td colspan="6">
-                            <p>Pedidos atualizados em @DateTime.Now</p>
+                        <td colspan="9">
+                            Pedidos atualizados em @DateTime.Now
                         </td>
                     </tr>
                 </tfoot>
@@ -48,11 +50,13 @@
                         @foreach (var orcamento in Model.Orcamentos)
                         {
                         <tr>
-                        <td>@orcamento.Cliente.Nome</td>
-                        <td>@orcamento.Cliente.Endereco</td>
-                        <td>@orcamento.Evento.Nome</td>
-                        <td>@orcamento.PacoteServicos.Nome</td>
-                        <td>@orcamento.TipoEvento</td>
+                        <td><p>@orcamento.Cliente.Nome</p></td>
+                        <td><p>@orcamento.Cliente.Endereco</p></td>
+                        <td><p>@orcamento.DataDoEvento</p></td>
+                        <td><p>@orcamento.Evento.Nome</p></td>
+                        <td><p>@orcamento.PacoteServicos.Nome</p></td>
+                        <td><p>@orcamento.TipoEvento</p></td>
+                        <td><p>@orcamento.FormaPagamento</p></td>
                         <td><a href='@Url.Action("Aprovar", "Orcamento", new {id = @orcamento.Id})'><i class="fas fa-check"></i></a></td>
                         <td><a href='@Url.Action("Reprovar", "Orcamento", new {id = @orcamento.Id})'><i class="fas fa-times"></i></a></td>
                         </tr>
