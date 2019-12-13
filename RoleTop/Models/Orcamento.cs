@@ -24,5 +24,6 @@ namespace RoleTop.Models
             this.Status = (uint) StatusOrcamento.PENDENTE;
             
         }
+
     }
 }
